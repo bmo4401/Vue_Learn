@@ -1,10 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { resolve } from 'path';
 export default defineNuxtConfig({
-  /*   devtools: { enabled: true }, */
-  /*   alias: {
-    '@': resolve(__dirname, '/'),
-  }, */
   alias: {
     '@': resolve(__dirname, '/'),
   },
@@ -18,5 +14,9 @@ export default defineNuxtConfig({
   typescript: {
     strict: true,
   },
+  ssr: false,
   modules: ['@nuxt/content', '@pinia/nuxt'],
+  routeRules: {
+    '/api/hello': { ssr: false },
+  },
 });
